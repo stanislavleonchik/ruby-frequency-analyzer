@@ -1,6 +1,7 @@
 source "https://rubygems.org"
 
-git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
+git_source(:github) {|freq| "https://github.com/#{freq}" }
 
 # Specify your gem's dependencies in freq.gemspec
 gemspec
+gem 'rubocop', group: 'development', require: false
