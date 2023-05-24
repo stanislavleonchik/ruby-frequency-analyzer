@@ -1,9 +1,5 @@
 # Freq
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/freq`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
-
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -21,6 +17,19 @@ Or install it yourself as:
     $ gem install freq
 
 ## Usage
+### initialize
+Этот метод является конструктором класса и принимает три аргумента: `folder_path` - путь к папке, которая будет использоваться для анализа текстов; `stop_list` - список слов, которые будут исключены из анализа; `lemmatize` - флаг, который указывает, должна ли использоваться лемматизация.
+В теле метода создаются переменные экземпляра: `@folder_path`, `@stop_list`, `@lemmatize` и `@word_counts`, которая представляет собой хэш, используемый для подсчета количества каждого слова в текстах. Параметр `stop_list` передается в конструктор как массив, из которого создается объект `Set`, чтобы исключить повторяющиеся элементы и ускорить поиск.
+Использование этого метода позволяет создать новый объект класса для анализа текстов, при этом можно указать определенные параметры для анализа и исключения определенных слов из анализа.
+
+### extract_words
+Этот метод считывает файл и извлекает из него слова. Он преобразует все слова в нижний регистр, а также применяет стемминг, если параметру @lemmatize присвоено значение true.
+
+Параметры:
+- file: файл, который необходимо прочитать и обработать.
+
+Возвращает: 
+- массив слов, извлеченных из файла.
 
 TODO: Write usage instructions here
 
