@@ -6,8 +6,8 @@ require "freq/version"
 Gem::Specification.new do |spec|
   spec.name          = "freq"
   spec.version       = Freq::VERSION
-  spec.authors       = ["Stanislav Leonchik","Maxim Petrov"]
-  spec.email         = ["leonstas1@mail.ru","maxim1275@yandex.ru"]
+  spec.authors       = ["Stanislav Leonchik","Maxim Petrov", "Ovsyannikov Konstantin"]
+  spec.email         = ["leonstas1@mail.ru","maxim1275@yandex.ru", "YMG77@yandex.ru"]
 
   spec.summary       = %q{Frequency analysis of text files.}
   spec.description   = %q{Frequency analysis of text files.}
