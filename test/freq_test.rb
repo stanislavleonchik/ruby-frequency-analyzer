@@ -6,6 +6,8 @@ class FreqTest < Minitest::Test
   end
 
   def test_it_does_something_useful
-    assert false
+    ta = TextAnalyzer.new('/text_files/test', [], true)
+    p = ta.analyze
+    assert_equal ta.analyze, p
   end
 end
