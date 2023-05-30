@@ -3,6 +3,7 @@
 require 'pathname'
 require 'set'
 require 'json'
+require 'lingua/stemmer'
 
 class TextAnalyzer
   def initialize(folder_path, stop_list=[], lemmatize=false)
@@ -30,10 +31,12 @@ class TextAnalyzer
 
   def extract_words(file)
     words = []
+    stemmer= Lingua::Stemmer.new(:language => "en")
     File.open(file, "r:UTF-8") do |f|
       f.each_line do |line|
+        p line
         line_words = line.downcase.scan(/\w+/)
-        # line_words.map!{ |word| Stemma::stem_word(word) } if @lemmatize
+        line_words.map!{ |word| stemmer.stem(word) } if @lemmatize
         words.concat(line_words)
       end
     end
