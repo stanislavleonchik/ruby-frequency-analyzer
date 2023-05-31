@@ -12,7 +12,9 @@ class TextAnalyzer
     @lemmatize = lemmatize
     @word_counts = Hash.new(0)
   end
-
+  def get_word_counts
+    @word_counts
+  end
   def analyze
     path = Pathname.new(@folder_path)
     txt_files = path.children.select{ |file| file.extname == '.txt' }
