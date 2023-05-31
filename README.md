@@ -15,8 +15,14 @@ And then execute:
 Or install it yourself as:
 
     $ gem install freq
+    $ gem install ruby-stememr
 
 ## Usage
+
+```ruby
+    Freq.analyze('PATH')
+```
+
 ### initialize
 Этот метод является конструктором класса и принимает три аргумента: `folder_path` - путь к папке, которая будет использоваться для анализа текстов; `stop_list` - список слов, которые будут исключены из анализа; `lemmatize` - флаг, который указывает, должна ли использоваться лемматизация.
 В теле метода создаются переменные экземпляра: `@folder_path`, `@stop_list`, `@lemmatize` и `@word_counts`, которая представляет собой хэш, используемый для подсчета количества каждого слова в текстах. Параметр `stop_list` передается в конструктор как массив, из которого создается объект `Set`, чтобы исключить повторяющиеся элементы и ускорить поиск.
@@ -47,7 +53,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/freq. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/stanislavleonchik/freq. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## Code of Conduct
 

@@ -5,6 +5,7 @@ require 'set'
 require 'json'
 require 'lingua/stemmer'
 
+
 class TextAnalyzer
   def initialize(folder_path, stop_list=[], lemmatize=false)
     @folder_path = folder_path
