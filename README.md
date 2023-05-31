@@ -15,7 +15,7 @@ And then execute:
 Or install it yourself as:
 
     $ gem install freq
-    $ gem install ruby-stememr
+    $ gem install ruby-stemmer
 
 ## Usage
 
