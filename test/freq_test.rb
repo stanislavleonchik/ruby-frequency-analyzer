@@ -1,14 +1,130 @@
 require "test_helper"
-
+require_relative '../lib/logic'
 class FreqTest < Minitest::Test
-  def test_that_it_has_a_version_number
-    refute_nil ::Freq::VERSION
-    test1 = TextAnalyzer.new('../test_1',%w[Is,eyes,little,me,world,the,if,kiss,town,free],false )
+  def test_1
+    test1 = TextAnalyzer.new('/Users/controldata/RubymineProjects/freq/test/test_1',%w[Is,eyes,little,me,world,the,if,kiss,town,free],false )
     test1.analyze
-    puts test1.get_word_counts
-  end
+    a = {
+      "the" => 12,
+      "world" => 2,
+      "i" => 9,
+      "love" => 2,
+      "tears" => 1,
+      "drop" => 1,
+      "to" => 10,
+      "be" => 2,
+      "part" => 2,
+      "of" => 2,
+      "wave" => 2,
+      "can" => 2,
+      "not" => 6,
+      "stop" => 2,
+      "ever" => 1,
+      "wonder" => 1,
+      "if" => 1,
+      "it" => 2,
+      "is" => 5,
+      "all" => 2,
+      "for" => 1,
+      "you" => 5,
+      "trains" => 1,
+      "hop" => 1,
+      "come" => 2,
+      "and" => 5,
+      "tell" => 1,
+      "me" => 4,
+      "when" => 1,
+      "time" => 1,
+      "this" => 2,
+      "real" => 1,
+      "life" => 1,
+      "just" => 3,
+      "fantasy" => 1,
+      "caught" => 1,
+      "in" => 1,
+      "a" => 5,
+      "landslide" => 1,
+      "no" => 3,
+      "escape" => 1,
+      "from" => 1,
+      "reality" => 1,
+      "open" => 1,
+      "your" => 1,
+      "eyes" => 1,
+      "look" => 1,
+      "up" => 1,
+      "skies" => 1,
+      "see" => 2,
+      "am" => 2,
+      "poor" => 1,
+      "boy" => 1,
+      "need" => 1,
+      "sympathy" => 1,
+      "because" => 1,
+      "easy" => 2,
+      "go" => 2,
+      "little" => 2,
+      "high" => 1,
+      "low" => 1,
+      "any" => 1,
+      "way" => 1,
+      "wind" => 1,
+      "blows" => 1,
+      "does" => 1,
+      "really" => 1,
+      "matter" => 1,
+      "citys" => 1,
+      "breaking" => 1,
+      "down" => 1,
+      "on" => 1,
+      "camels" => 1,
+      "back" => 1,
+      "they" => 3,
+      "have" => 2,
+      "cause" => 3,
+      "do" => 2,
+      "know" => 1,
+      "wack" => 1,
+      "so" => 1,
+      "while" => 1,
+      "fill" => 1,
+      "streets" => 1,
+      "its" => 2,
+      "appealing" => 1,
+      "would" => 1,
+      "get" => 2,
+      "out" => 1,
+      "county" => 1,
+      "are" => 1,
+      "damned" => 1,
+      "free" => 1,
+      "got" => 2,
+      "new" => 1,
+      "horizon" => 1,
+      "ephemeral" => 1,
+      "style" => 1,
+      "melancholy" => 1,
+      "town" => 1,
+      "where" => 1,
+      "we" => 1,
+      "never" => 1,
+      "smile" => 1,
+      "wanna" => 1,
+      "hear" => 1,
+      "message" => 1,
+      "beep" => 1,
+      "my" => 1,
+      "dreams" => 1,
+      "kiss" => 1,
+      "sleep" => 1
+    }
 
-  def test_it_does_something_useful
-    assert false
+    res = test1.get_word_counts
+    assert_equal(a, res)
+  end
+  def test_2
+    test2 = TextAnalyzer.new('/Users/controldata/RubymineProjects/freq/text_files',%w[Is,eyes,little,me,world,the,if,kiss,town,free],false )
+    test2.analyze
+    p test2.get_word_counts
   end
 end

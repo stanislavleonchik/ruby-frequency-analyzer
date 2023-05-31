@@ -1,4 +1,5 @@
 require "freq/version"
+require_relative '../lib/logic'
 
 module Freq
   class Error < StandardError; end
@@ -11,10 +12,10 @@ module Freq
  указав для каждого слова количество вхождений. Нужно сделать настройки для работы модуля:
  стоп-лист слов (слова, которые не учитываются при подсчете), проводить ли лемматизацию.'
 
-  def self.analyze
-    analyzer = TextAnalyzer.new('./text_files', ['the', 'and', 'of'], true)
-    result = analyzer.analyze
-    puts JSON.pretty_generate(result)
+  def self.analyze(path, stop_list = [], lemmatize = false)
+    analyzer = TextAnalyzer.new(path, stop_list, lemmatize)
+    analyzer.analyze
+    puts JSON.pretty_generate(analyzer.get_word_counts)
   end
 
 end
