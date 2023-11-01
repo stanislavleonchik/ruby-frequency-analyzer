@@ -1,4 +1,5 @@
 # Freq
+Educational project for understanding ruby
 
 ## Installation
 
